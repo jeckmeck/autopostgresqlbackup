@@ -156,7 +156,7 @@ CONN_ARGS=()
 # Hostname
 HOSTNAME="$(uname -n)"
 if [[ "${HOSTNAME}" != *.* ]]; then
-    HOSTNAME="$(hostname --fqdn)"
+    HOSTNAME="$(hostname -f)"
 fi
 
 # Return Code
