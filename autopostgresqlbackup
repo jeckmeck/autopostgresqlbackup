@@ -847,7 +847,7 @@ elif [ "${CONFIG_N}" -gt 0 ]; then
     cleanup
 
     find "${CONFIG}" -type f -iname '*.conf' -print0 | \
-        xargs -0 -L1 "${CMD}" "${CMD_ARGS[@]}" -c
+        xargs -0 -n1 "${CMD}" "${CMD_ARGS[@]}" -c
     exit $?
 elif [ -f "${CONFIG}" ]; then
     log_debug "Loading config '${CONFIG}'"
