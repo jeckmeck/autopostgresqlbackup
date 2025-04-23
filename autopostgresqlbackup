@@ -594,9 +594,9 @@ db_purge() {
         sort -r | \
         sed -E 's/[^[:space:]]* //' | \
         tail -n "+${count}" | \
-        xargs -L1 rm -fv | \
         while IFS= read -r line ; do
-            log_info "${line}"
+            output="$(rm -fv "${line}")"
+            log_info "${output}"
         done
 }
 # }}}
